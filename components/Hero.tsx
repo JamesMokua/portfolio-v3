@@ -1,17 +1,21 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Arrow from "../public/images/arrow-right.svg";
 import Atom from "../public/images/one.webp";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 // ..
-AOS.init();
+
 interface LetterSpanProps {
   letter: string;
 }
 const Hero: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
+  useEffect(() => {
+  AOS.init();
+  }, [])
+  
   const text = "Software Engineer.";
   const LetterSpan: React.FC<LetterSpanProps> = ({ letter }) => (
     <span className=" tracking-wide transition-colors duration-500 ease-in-out hover:text-white">
