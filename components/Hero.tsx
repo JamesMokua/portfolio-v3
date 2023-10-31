@@ -1,11 +1,16 @@
 "use client";
 import Image from "next/image";
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Arrow from "../public/images/arrow-right.svg";
 import Atom from "../public/images/one.webp";
+import Folder from "../public/images/folder.svg";
+import Linkedin from "../public/images/linkedin.svg";
+import UpArrow from "../public/images/arrow-link.svg";
+import Email from "../public/images/email.svg";
+import UX from "../public/images/ux.svg";
+import UI from "../public/images/pen.svg";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
-// ..
 
 interface LetterSpanProps {
   letter: string;
@@ -13,9 +18,9 @@ interface LetterSpanProps {
 const Hero: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
   useEffect(() => {
-  AOS.init();
-  }, [])
-  
+    AOS.init();
+  }, []);
+
   const text = "Software Engineer.";
   const LetterSpan: React.FC<LetterSpanProps> = ({ letter }) => (
     <span className=" tracking-wide transition-colors duration-500 ease-in-out hover:text-white">
@@ -38,7 +43,7 @@ const Hero: React.FC = () => {
               Hey, I&apos;m Mokua 👋🏾{" "}
             </h1>
             <div className="flex flex-row">
-              <p className=" font-normal" >
+              <p className=" font-normal">
                 I believe that great code starts with an obsession to meet user
                 needs
               </p>
@@ -46,9 +51,10 @@ const Hero: React.FC = () => {
             </div>
           </div>
           <div
-            className={` text-2xl w-6/12 h-[50vh] bg-[#343639] px-10 py-5 rounded-2xl cursor-pointer transition-colors duration-500 ease-in-out hover:bg-[#E27625] ${
-              isHovered ? "hovered" : ""
-            }`}
+            className={` text-2xl w-6/12 h-[50vh] bg-[#343639] px-10 py-5 rounded-2xl cursor-pointer
+             transition-colors duration-500 ease-in-out hover:bg-[#E27625] ${
+               isHovered ? "hovered" : ""
+             }`}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
@@ -68,7 +74,7 @@ const Hero: React.FC = () => {
                   </h2>
                   <div className="flex flex-row justify-between">
                     <div
-                      className="leading-10 text-4xl transition-all duration-[10000] ease-in font-bold"
+                      className="leading-10 text-4xl transition-all duration-1000 ease-in font-bold"
                       data-aos="slide-down"
                       data-aos-offset="200"
                       data-aos-delay="50"
@@ -110,19 +116,55 @@ const Hero: React.FC = () => {
         </div>
         <div className="w-full  flex flex-row gap-5">
           <div className="text-2xl  w-1/4 h-[50vh] bg-[#1A1A1C] rounded-2xl hover:cursor-pointer transition-colors duration-500 ease-in-out hover:bg-[#E27625] ">
-            Projects
+            <div className="flex flex-col justify-center px-10 py-10 ">
+              <Image
+                src={Folder}
+                width={70}
+                height={70}
+                alt="folder"
+                className="pb-5"
+              />
+              <div className="flex flex-row justify-between items-center ">
+                <h1 className="text-4xl font-bold leading-loose ">
+                  My Projects
+                </h1>
+                <div className="pl-5 pt-20  ">
+                  <Image src={Arrow} width={40} height={40} alt="arrow" />
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="text-2xl  w-1/4 h-[50vh] bg-[#1A1A1C]  rounded-2xl hover:cursor-pointer transition-colors duration-500 ease-in-out hover:bg-[#E27625]  ">
-            Connect
+          <div className="text-2xl  w-[22.2vw] h-[50vh] bg-[#1A1A1C]  rounded-2xl flex flex-col justify-center items-center pt-20 hover:cursor-pointer transition-colors duration-500 ease-in-out hover:bg-[#E27625]  ">
+            <Image src={Linkedin} width={65} height={65} alt="linkedin" />
+            <div className="flex flex-row justify-end items-end pt-3 w-9/12 ">
+              <Image src={UpArrow} width={40} height={40} alt="arrow-up" />
+            </div>
           </div>
-          <div className="text-2xl w-2/4  h-[50vh] bg-[#1A1A1C]  rounded-2xl hover:cursor-pointer transition-colors duration-500 ease-in-out hover:bg-[#E27625] ">
-            Skills
+          <div
+            className="text-2xl w-2/4  h-[50vh] bg-[#1A1A1C]  rounded-2xl px-10 py-10 flex flex-col justify-start hover:cursor-pointer
+           transition-colors duration-500 ease-in-out hover:bg-[#E27625]"
+          >
+            <h2 className="font-normal text-lg">What I Do</h2>
+            <div className="flex flex-row ">
+              <div className="pr-10">
+                <h2 className="text-2xl font-bold leading-loose w-5 ">Software Development</h2>
+                <Image src={UX} width={100} height={100} alt="Software" />
+              </div>
+              <div className="pl-10">
+                <h2 className="text-2xl font-bold leading-loose w-5 ">UI Design</h2>
+                <Image src={UI} width={100} height={100} alt="UI" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <div className="w-full flex flex-row gap-4 justify-center items-center font-bold text-white py-20">
-        <div className="">LinkedIn</div>
-        <div className="">Gmail</div>
+        <div className="hover:cursor-pointer">
+          <Image src={Linkedin} width={35} height={35} alt="linkedin" />
+        </div>
+        <div className="pl-5 hover:cursor-pointer">
+          <Image src={Email} width={35} height={35} alt="email" />
+        </div>
       </div>
     </div>
   );
