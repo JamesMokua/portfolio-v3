@@ -29,16 +29,16 @@ const Hero: React.FC = () => {
   );
   return (
     <div>
-      <div className="text-[#7D8487] text-[140px] text-center font-bold hover:cursor-pointer">
-        <span className="inline-block leading-[260px]">
+      <div className="text-[#7D8487] text-[80px]  text-center font-bold hover:cursor-pointer sm:text-[140px]">
+        <span className="inline-block leading-[90px] sm-leading[260px]">
           {text.split("").map((letter, index) => (
             <LetterSpan key={index} letter={letter} />
           ))}
         </span>
       </div>
       <div className="flex flex-col gap-5 text-white ">
-        <div className="w-full  flex flex-row gap-5 ">
-          <div className="text-2xl  w-6/12 h-[50vh] bg-[#1A1A1C] rounded-2xl px-10 py-20 hover:cursor-pointer transition-colors duration-500 ease-in-out hover:bg-[#E27625] ">
+        <div className="w-full flex flex-col sm:flex sm:flex-row gap-5 ">
+          <div className="sm:text-2xl  sm:w-6/12 sm:h-[50vh] bg-[#1A1A1C] rounded-2xl px-10 py-20 hover:cursor-pointer transition-colors duration-500 ease-in-out hover:bg-[#E27625] ">
             <h1 className="tracking-wide font-bold pb-10 text-5xl">
               Hey, I&apos;m Mokua 👋🏾{" "}
             </h1>
@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
             </div>
           </div>
           <div
-            className={` text-2xl w-6/12 h-[50vh] bg-[#343639] px-10 py-5 rounded-2xl cursor-pointer
+            className={` sm:text-2xl sm:w-6/12 sm:h-[50vh] bg-[#343639] px-10 py-5 rounded-2xl cursor-pointer
              transition-colors duration-500 ease-in-out hover:bg-[#E27625] ${
                isHovered ? "hovered" : ""
              }`}
@@ -114,9 +114,9 @@ const Hero: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="w-full  flex flex-row gap-5">
-          <div className="text-2xl  w-1/4 h-[50vh] bg-[#1A1A1C] rounded-2xl hover:cursor-pointer transition-colors duration-500 ease-in-out hover:bg-[#E27625] ">
-            <div className="flex flex-col justify-center px-10 py-10 ">
+        <div className="w-full flex flex-col sm:flex sm:flex-row gap-5">
+          <div className="sm:text-2xl sm:w-1/4 sm:h-[50vh] bg-[#1A1A1C] rounded-2xl hover:cursor-pointer transition-colors duration-500 ease-in-out hover:bg-[#E27625] ">
+            <div className=" flex flex-col justify-center px-10 py-10 ">
               <Image
                 src={Folder}
                 width={70}
@@ -124,7 +124,7 @@ const Hero: React.FC = () => {
                 alt="folder"
                 className="pb-5"
               />
-              <div className="flex flex-row justify-between items-center ">
+              <div className=" flex flex-row justify-between items-center ">
                 <h1 className="text-4xl font-bold leading-loose ">
                   My Projects
                 </h1>
@@ -134,24 +134,28 @@ const Hero: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="text-2xl  w-[22.2vw] h-[50vh] bg-[#1A1A1C]  rounded-2xl flex flex-col justify-center items-center pt-20 hover:cursor-pointer transition-colors duration-500 ease-in-out hover:bg-[#E27625]  ">
+          <div className="sm:text-2xl  sm:w-[22.2vw] sm:h-[50vh] bg-[#1A1A1C]  rounded-2xl flex flex-col justify-center items-center pt-20 hover:cursor-pointer transition-colors duration-500 ease-in-out hover:bg-[#E27625]  ">
             <Image src={Linkedin} width={65} height={65} alt="linkedin" />
             <div className="flex flex-row justify-end items-end pt-3 w-9/12 ">
               <Image src={UpArrow} width={40} height={40} alt="arrow-up" />
             </div>
           </div>
           <div
-            className="text-2xl w-2/4  h-[50vh] bg-[#1A1A1C]  rounded-2xl px-10 py-10 flex flex-col justify-start hover:cursor-pointer
+            className="sm:text-2xl sm:w-2/4  sm:h-[50vh] bg-[#1A1A1C]  rounded-2xl px-10 py-10 flex flex-col justify-start hover:cursor-pointer
            transition-colors duration-500 ease-in-out hover:bg-[#E27625]"
           >
             <h2 className="font-normal text-lg">What I Do</h2>
             <div className="flex flex-row ">
               <div className="pr-10">
-                <h2 className="text-2xl font-bold leading-loose w-5 ">Software Development</h2>
+                <h2 className="text-2xl font-bold leading-loose w-5 ">
+                  Software Development
+                </h2>
                 <Image src={UX} width={100} height={100} alt="Software" />
               </div>
               <div className="pl-10">
-                <h2 className="text-2xl font-bold leading-loose w-5 ">UI Design</h2>
+                <h2 className="text-2xl font-bold leading-loose w-5 ">
+                  UI Design
+                </h2>
                 <Image src={UI} width={100} height={100} alt="UI" />
               </div>
             </div>
