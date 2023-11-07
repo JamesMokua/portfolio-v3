@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
   );
   return (
     <div>
-      <div className="text-[#7D8487] text-[80px]  text-center font-bold hover:cursor-pointer sm:text-[140px]">
+      <div className="text-[#7D8487] text-[65px]   sm:text-center font-bold hover:cursor-pointer sm:text-[140px]">
         <span className="inline-block leading-[90px] sm-leading[260px]">
           {text.split("").map((letter, index) => (
             <LetterSpan key={index} letter={letter} />
