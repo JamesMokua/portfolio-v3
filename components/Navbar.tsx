@@ -4,23 +4,23 @@ import { Button } from "./ui/button";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between py-8 text-white">
+    <div className=" sm:flex sm:justify-between sm:py-8 text-white">
       <div>
-        <Link href="/" className="text-lg hover:cursor-pointer">
+        <Link href="/" className="sm:text-lg hover:cursor-pointer">
           JM
         </Link>
       </div>
-      <div className="flex flex-row items-center">
+      <div className="hidden sm:flex sm:flex-row sm:items-center">
         <Link
           href="/"
-          className="pr-9 font-extralight text-gray-400 text-base
+          className="sm:pr-9 font-extralight text-gray-400 text-base
            transition-colors duration-500 ease-in-out hover:text-white hover:cursor-pointer"
         >
           Work
         </Link>
         <Link
           href="/"
-          className="pr-9 text-gray-400
+          className="sm:pr-9 text-gray-400
            text-base font-extralight transition-colors
             duration-500 ease-in-out hover:text-white hover:cursor-pointer"
         >
@@ -28,21 +28,21 @@ const Navbar = () => {
         </Link>
         <Link
           href="/"
-          className="pr-9  text-gray-400  text-base font-extralight
+          className="sm:pr-9  text-gray-400  text-base font-extralight
            transition-colors duration-500 ease-in-out hover:text-white hover:cursor-pointer"
         >
           Resume
         </Link>
         <Link
           href="/"
-          className="pr-9  text-gray-400  text-base font-extralight
+          className="sm:pr-9  text-gray-400  text-base font-extralight
            transition-colors duration-500 ease-in-out hover:text-white hover:cursor-pointer"
         >
           More
         </Link>
         <Link href="/">
           <Button
-            className=" text-black bg-white text-base font-semibold  rounded-2xl
+            className=" text-black bg-white text-base sm:font-semibold  sm:rounded-2xl
            transition-all duration-500 ease-in-out  hover:cursor-pointer  hover:bg-[#E27625] "
           >
             Get In Touch
