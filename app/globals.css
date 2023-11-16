@@ -72,8 +72,6 @@
   }
   body {
     @apply bg-background text-foreground;
-    padding-left: 2rem;
-    padding-right: 2rem;
     background-color: black;
   }
 }
