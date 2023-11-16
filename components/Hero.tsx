@@ -11,6 +11,7 @@ import UX from "../public/images/ux.svg";
 import UI from "../public/images/pen.svg";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
+import Link from "next/link";
 
 interface LetterSpanProps {
   letter: string;
@@ -28,7 +29,7 @@ const Hero: React.FC = () => {
     </span>
   );
   return (
-    <div>
+    <div className="px-[2rem]">
       <div className="text-[#7D8487] text-[65px]  mt-6  sm:text-center font-bold hover:cursor-pointer sm:text-[140px]">
         <span className="inline-block leading-[90px] sm-leading[260px]">
           {text.split("").map((letter, index) => (
@@ -39,17 +40,21 @@ const Hero: React.FC = () => {
       <div className="flex flex-col gap-5 text-white ">
         <div className="w-full flex flex-col sm:flex sm:flex-row gap-5 ">
           <div className="sm:text-2xl  sm:w-6/12 sm:h-[50vh] bg-[#1A1A1C] rounded-2xl px-10 py-20 hover:cursor-pointer transition-colors duration-500 ease-in-out hover:bg-[#E27625] ">
-            <h1 className="tracking-wide font-bold pb-10 text-5xl">
-              Hey, I&apos;m Mokua 👋🏾{" "}
-            </h1>
-            <div className="flex flex-row">
-              <p className=" font-normal">
-                I believe that great code starts with an obsession to meet user
-                needs
-              </p>
-              <Image src={Arrow} width={40} height={40} alt="arrow" />
-            </div>
+            <Link href="/about">
+              {" "}
+              <h1 className="tracking-wide font-bold pb-10 text-5xl">
+                Hey, I&apos;m Mokua 👋🏾{" "}
+              </h1>
+              <div className="flex flex-row">
+                <p className=" font-normal">
+                  I believe that great code starts with an obsession to meet
+                  user needs
+                </p>
+                <Image src={Arrow} width={40} height={40} alt="arrow" />
+              </div>{" "}
+            </Link>
           </div>
+
           <div
             className={` sm:text-2xl sm:w-6/12 sm:h-[50vh] bg-[#343639] px-10 py-5 rounded-2xl cursor-pointer
              transition-colors duration-500 ease-in-out hover:bg-[#E27625] ${
