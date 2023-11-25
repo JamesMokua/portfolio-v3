@@ -130,21 +130,31 @@ const Hero: React.FC = () => {
                 className="pb-5"
               />
               <div className=" flex flex-row justify-between items-center ">
-                <h1 className="text-4xl font-bold leading-loose ">
-                  My Projects
-                </h1>
-                <div className="pl-5 pt-20  ">
-                  <Image src={Arrow} width={40} height={40} alt="arrow" />
-                </div>
+                <Link href="/work">
+                  <h1 className="text-4xl font-bold leading-loose ">
+                    My Projects
+                  </h1>
+                  <div className="pl-5 pt-20  ">
+                    <Image src={Arrow} width={40} height={40} alt="arrow" />
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
-          <div className="sm:text-2xl  sm:w-[22.2vw] sm:h-[50vh] bg-[#1A1A1C]  rounded-2xl flex flex-col justify-center items-center pt-20 hover:cursor-pointer transition-colors duration-500 ease-in-out hover:bg-[#E27625]  ">
-            <Image src={Linkedin} width={65} height={65} alt="linkedin" />
-            <div className="flex flex-row justify-end items-end pt-3 w-9/12 ">
-              <Image src={UpArrow} width={40} height={40} alt="arrow-up" />
+
+          <Link href="https://www.linkedin.com/in/jamesmokua/" target="_blank">
+            <div
+              className="sm:text-2xl  sm:w-[22.2vw] sm:h-[50vh] bg-[#1A1A1C] 
+           rounded-2xl flex flex-col justify-center items-center pt-20 hover:cursor-pointer
+           transition-colors duration-500 ease-in-out hover:bg-[#E27625]  "
+            >
+              <Image src={Linkedin} width={65} height={65} alt="linkedin" />
+              <div className="flex flex-row justify-end items-end pt-3 w-9/12 ">
+                <Image src={UpArrow} width={40} height={40} alt="arrow-up" />
+              </div>
             </div>
-          </div>
+          </Link>
+
           <div
             className="sm:text-2xl sm:w-2/4  sm:h-[50vh] bg-[#1A1A1C]  rounded-2xl px-10 py-10 flex flex-col justify-start hover:cursor-pointer
            transition-colors duration-500 ease-in-out hover:bg-[#E27625]"
@@ -169,10 +179,14 @@ const Hero: React.FC = () => {
       </div>
       <div className="w-full flex flex-row gap-4 justify-center items-center font-bold text-white py-20">
         <div className="hover:cursor-pointer">
-          <Image src={Linkedin} width={35} height={35} alt="linkedin" />
+          <Link href="https://www.linkedin.com/in/jamesmokua/" target="_blank">
+            <Image src={Linkedin} width={35} height={35} alt="linkedin" />
+          </Link>
         </div>
         <div className="pl-5 hover:cursor-pointer">
-          <Image src={Email} width={35} height={35} alt="email" />
+          <Link href="mailto:jamieedgar02@gmail.com">
+            <Image src={Email} width={35} height={35} alt="email" />
+          </Link>
         </div>
       </div>
     </div>

@@ -12,79 +12,62 @@ import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 import Link from "next/link";
 import Image from "next/image";
+import {expertise} from '../../components/data/expertise'
 
 export default function Work() {
   const [isHovered, setIsHovered] = useState(false);
   useEffect(() => {
     AOS.init();
   }, []);
+ 
+  const sortedExpertise = [...expertise].sort((a, b) => b.id - a.id);
   return (
-    <div className="px-[2rem]">
+    <div >
       <div className="text-[#7D8487] text-[65px]  mt-6  sm:text-center font-bold hover:cursor-pointer sm:text-[140px]">
-        <span className="inline-block leading-[90px] sm-leading[260px]">
+        <span className="text-center inline-block leading-[90px] sm-leading[260px]">
           Featured Work
         </span>
       </div>
-      <div className="flex flex-col gap-5 text-white ">
-        <div className="w-full flex flex-col sm:flex sm:flex-row gap-5">
-          <div className="sm:text-2xl sm:w-1/4 sm:h-[50vh] bg-[#1A1A1C] rounded-2xl hover:cursor-pointer transition-colors duration-500 ease-in-out hover:bg-[#E27625] ">
-            <div className=" flex flex-col justify-center px-10 py-10 ">
-              <Image
-                src={Folder}
-                width={70}
-                height={70}
-                alt="folder"
-                className="pb-5"
-              />
-              <div className=" flex flex-row justify-between items-center ">
-                <h1 className="text-4xl font-bold leading-loose ">
-                  My Projects
-                </h1>
-                <div className="pl-5 pt-20  ">
-                  <Image src={Arrow} width={40} height={40} alt="arrow" />
-                </div>
+   
+          <div className=" grid grid-cols-1 sm:grid-cols-4 sm:grid-rows-2  sm:grid-flow-row px-10
+            gap-5 text-white  ">
+            {sortedExpertise.map((item) => (
+              <div
+                key={item.id}
+                className={` bg-[#1A1A1C] rounded-2xl 
+                hover:cursor-pointer transition-colors duration-500 ease-in-out hover:bg-[#E27625]
+                 sm:w-full `}
+              >
+                <Link href={`/work/${item.id}`}>
+                  <h1 className="text-white text-2xl font-bold  text-center pt-5 ">
+                    {item.title}
+                  </h1>
+                  <p className="h-[8rem] text-center pt-5">
+                    {item.desc}
+                  </p>
+                  <p className="text-lg font-thin text-center pt-5">
+                    {item.techStack}
+                  </p>
+                  <div className="pl-5 pt-20 pb-20  ">
+                    <div>Learn more</div>
+                    <Image src={Arrow} width={40} height={40} alt="arrow" />
+                  </div>
+                </Link>
               </div>
-            </div>
+            ))}
           </div>
-          <div className="sm:text-2xl  sm:w-[22.2vw] sm:h-[50vh] bg-[#1A1A1C]  rounded-2xl flex flex-col justify-center items-center pt-20 hover:cursor-pointer transition-colors duration-500 ease-in-out hover:bg-[#E27625]  ">
-            <Image src={Linkedin} width={65} height={65} alt="linkedin" />
-            <div className="flex flex-row justify-end items-end pt-3 w-9/12 ">
-              <Image src={UpArrow} width={40} height={40} alt="arrow-up" />
-            </div>
-          </div>
-          <div className="sm:text-2xl sm:w-1/4 sm:h-[50vh] bg-[#1A1A1C] rounded-2xl hover:cursor-pointer transition-colors duration-500 ease-in-out hover:bg-[#E27625] ">
-            <div className=" flex flex-col justify-center px-10 py-10 ">
-              <Image
-                src={Folder}
-                width={70}
-                height={70}
-                alt="folder"
-                className="pb-5"
-              />
-              <div className=" flex flex-row justify-between items-center ">
-                <h1 className="text-4xl font-bold leading-loose ">
-                  My Projects
-                </h1>
-                <div className="pl-5 pt-20  ">
-                  <Image src={Arrow} width={40} height={40} alt="arrow" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="sm:text-2xl  sm:w-[22.2vw] sm:h-[50vh] bg-[#1A1A1C]  rounded-2xl flex flex-col justify-center items-center pt-20 hover:cursor-pointer transition-colors duration-500 ease-in-out hover:bg-[#E27625]  ">
-            <Image src={Linkedin} width={65} height={65} alt="linkedin" />
-            <div className="flex flex-row justify-end items-end pt-3 w-9/12 ">
-              <Image src={UpArrow} width={40} height={40} alt="arrow-up" />
-            </div>
-          </div>
-        </div>
-      </div>
+     
+
       <div className="w-full flex flex-row gap-4 justify-center items-center font-bold text-white py-20">
-        <div className="hover:cursor-pointer">
-          <Image src={Linkedin} width={35} height={35} alt="linkedin" />
+      <div className="hover:cursor-pointer">
+          <Link href="https://www.linkedin.com/in/jamesmokua/" target="_blank">
+            <Image src={Linkedin} width={35} height={35} alt="linkedin" />
+          </Link>
         </div>
         <div className="pl-5 hover:cursor-pointer">
-          <Image src={Email} width={35} height={35} alt="email" />
+          <Link href="mailto:jamieedgar02@gmail.com">
+            <Image src={Email} width={35} height={35} alt="email" />
+          </Link>
         </div>
       </div>
     </div>
