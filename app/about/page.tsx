@@ -3,7 +3,7 @@ import React from "react";
 import Person from "../../public/images/person.jpg";
 import Linkedin from "../../public/images/linkedin.svg";
 import Email from "../../public/images/email.svg";
-
+import Link from "next/link";
 export default function About() {
   return (
     <div>
@@ -66,11 +66,15 @@ export default function About() {
         </p>
       </div>
       <div className="w-full flex flex-row gap-4 justify-center items-center font-bold text-white py-20">
-        <div className="hover:cursor-pointer">
-          <Image src={Linkedin} width={35} height={35} alt="linkedin" />
+      <div className="hover:cursor-pointer">
+          <Link href="https://www.linkedin.com/in/jamesmokua/" target="_blank">
+            <Image src={Linkedin} width={35} height={35} alt="linkedin" />
+          </Link>
         </div>
         <div className="pl-5 hover:cursor-pointer">
-          <Image src={Email} width={35} height={35} alt="email" />
+          <Link href="mailto:jamieedgar02@gmail.com">
+            <Image src={Email} width={35} height={35} alt="email" />
+          </Link>
         </div>
       </div>
     </div>
